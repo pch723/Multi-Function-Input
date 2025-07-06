@@ -2,6 +2,8 @@
 ![预览展示](https://i-blog.csdnimg.cn/direct/138304199e8a4d499ba6dafddfe30101.gif)
 主要功能如下：**唤起列表，选中输入**，**表情包输入**，**预览回显**，**支持复制粘贴**
 详细介绍参考：
+- <https://juejin.cn/spost/7523231174619430927>
+- <https://blog.csdn.net/qq_58355643/article/details/149152615?spm=1001.2014.3001.5502>
 
 ## 软件架构
 本项目采用vue3+ts实现
