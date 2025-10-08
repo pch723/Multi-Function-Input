@@ -26,6 +26,16 @@ const emojiList: Emoji[] = [
   { name: '爱心', id: '0007', url: '/src/assets/emoji/EMOJI-95.png' },
 ];
 
+const staticEmojis = import.meta.glob('@/assets/emoji/*.{png,jpg,jpeg}', { eager: true });
+const staticAvatars = import.meta.glob('@/assets/avatar/*.{png,jpg,jpeg}', { eager: true });
+const staticEmojiList: string[] = Object.keys(staticEmojis).map((item) => (staticEmojis[item] as { default: string }).default);
+const staticAvatarList: string[] = Object.keys(staticAvatars).map((item) => (staticAvatars[item] as { default: string }).default);
+emojiList.forEach((item, index) => {
+  item.url = staticEmojiList[index];
+});
+userAllList.forEach((item, index) => {
+  item.avatar = staticAvatarList[index];
+});
 export function getUserList(name: string): Promise<User[]> {
   return new Promise((resolve) => {
     const regex = new RegExp(name, 'i');
