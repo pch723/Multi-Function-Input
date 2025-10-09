@@ -34,7 +34,7 @@ emojiList.forEach((item, index) => {
   item.url = staticEmojiList[index];
 });
 userAllList.forEach((item, index) => {
-  item.avatar = staticAvatarList[index];
+  item.avatar = staticAvatarList[index % 6];
 });
 export function getUserList(name: string): Promise<User[]> {
   return new Promise((resolve) => {
